@@ -25,25 +25,13 @@ Le projet est divisé en plusieurs dossiers principaux :
   - `store/`: Pour la gestion d'état (Redux si utilisé).
   - `services/`: Logique de gestion des appels API.
   - `styles/`: Feuilles de style pour l'application.
+
 - `public/`: Fichiers statiques comme l'index.html.
+  - `index.html`: Page HTML racine servant de point d'entrée à l'application.
 
-
-
-
-La structure finale du projet est organisée de la manière suivante :
-
-hrnet-react/
-├── src/
-│   ├── components/   # Composants réutilisables de React.
-│   ├── pages/        # Composants spécifiques à chaque page.
-│   ├── store/        # Pour la gestion d'état avec Redux (si utilisé).
-│   ├── services/     # Logique de gestion des appels API.
-│   └── styles/       # Styles globaux appliqués dans toute l'application.
-├── public/
-│   └── index.html    # Page HTML racine servant de point d'entrée à l'application.
-├── .gitignore        # Fichier spécifiant les fichiers à ignorer par Git.
-├── package.json      # Fichier de gestion des dépendances et scripts npm.
-└── vite.config.js    # Configuration spécifique pour Vite.
+- `gitignore`: Fichier spécifiant les fichiers à ignorer par Git. 
+- `package.json`: Fichier de gestion des dépendances et scripts npm.
+- `vite.config.js`: Configuration spécifique pour Vite.
 
 
 -------------------------------------------------------------------------
