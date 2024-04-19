@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 function Dashboard() {
   return (
     <div className="container">
-      <h1>Dashboard</h1>
+      <h1>Votre tableau de bord</h1>
       <div>
-        <h2>Actions</h2>
+        <h2>Actions disponible pour vous</h2>
         <ul>
           <li>
             <Link to="/dashboard/NewEmployee">Créer un nouvel employé</Link>
