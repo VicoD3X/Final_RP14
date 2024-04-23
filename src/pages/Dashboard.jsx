@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png'
+import '../App.css'
 
 function Dashboard() {
   return (
     <div className="container">
-      <h1>Votre tableau de bord</h1>
       <div>
-        <h2>Actions disponible pour vous</h2>
+      <img src={logo} alt="Logo de l'entreprise" />
+      </div>
+
+      <h1 className='DashH1'>Votre tableau de bord</h1>
+      <div className='DashAction'>
+        <h2>Vos actions</h2>
         <div className="actions">
           <div>
             <Link to="/dashboard/FormEmployee">Créer un nouvel employé</Link>
