@@ -2,7 +2,8 @@ import React, { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { addEmployee } from '../features/employeesSlices';
 import '../App.css';
-import EmployeePopup from './mypopup/EmployeePopup'
+import Popup from '@vicod3x/popup_package';
+
 function EmployeeForm() {
     const dispatch = useDispatch();
     const [employee, setEmployee] = useState({
@@ -160,7 +161,7 @@ function EmployeeForm() {
             </div>
             <button type="submit">Enregistrer</button>
         </form>
-        <EmployeePopup 
+        <Popup 
         isOpen={showPopup} 
         close={closePopup}
         content={<p>Nouvelle employée créée !</p>}
