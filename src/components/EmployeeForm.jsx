@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { addEmployee } from '../features/employeesSlices';
-import '../App.css'
-
+import '../App.css';
+import EmployeePopup from './mypopup/EmployeePopup'
 function EmployeeForm() {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     const [employee, setEmployee] = useState({
         firstName: '',
         lastName: '',
@@ -17,6 +17,9 @@ function EmployeeForm() {
         department: ''
     });
 
+    const [showPopup, setShowPopup] = useState(false);
+    const timeoutRef = useRef(null); // useRef pour gérer le timer
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setEmployee(prevState => ({
@@ -27,15 +30,26 @@ function EmployeeForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Vérification des données avec les regex ici
-
-        // Logique pour sauvegarder les données, par exemple dans localStorage
         console.log('Employee saved:', employee);
-        dispatch(addEmployee(employee))
-        // Réinitialiser le formulaire ou faire d'autres actions
+        dispatch(addEmployee(employee));
+        setShowPopup(true);
+        // Réinitialiser l'état du formulaire ici, si nécessaire
+
+        // Gestion du timer pour fermer le popup
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = setTimeout(() => {
+            setShowPopup(false);
+        }, 5000);
     };
 
+    const closePopup = () => {
+        setShowPopup(false);
+        clearTimeout(timeoutRef.current);
+    };
+
+
     return (
+        <>
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Prénom:</label>
@@ -146,6 +160,12 @@ function EmployeeForm() {
             </div>
             <button type="submit">Enregistrer</button>
         </form>
+        <EmployeePopup 
+        isOpen={showPopup} 
+        close={closePopup}
+        content={<p>Nouvelle employée créée !</p>}
+        />
+        </>
     );
 }
 
