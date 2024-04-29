@@ -1,6 +1,6 @@
 # React + Vite
 
-Projet Final d'OC (P14) 
+Projet Final d'OpenClassrooms (P14) 
 
 -------------------------------------------------------------------------
 

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addEmployee } from '../features/employeesSlices';
 import '../App.css'
 
 function EmployeeForm() {
+    const dispatch = useDispatch()
     const [employee, setEmployee] = useState({
         firstName: '',
         lastName: '',
@@ -28,6 +31,7 @@ function EmployeeForm() {
 
         // Logique pour sauvegarder les données, par exemple dans localStorage
         console.log('Employee saved:', employee);
+        dispatch(addEmployee(employee))
         // Réinitialiser le formulaire ou faire d'autres actions
     };
 
