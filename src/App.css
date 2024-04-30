@@ -99,7 +99,8 @@ body {
     font-weight: bold;
     color: #FFFFFF;
     background-color: #34C759;
-    padding: 15px 30px;
+    padding: 15px 10px;
+    border-radius: 15px;
     display: block;
     width: 100%;
     text-align: center;
@@ -188,4 +189,37 @@ label {
 
 .address {
     margin-top: 10px;
+}
+
+
+/* FEATURE DE TRANSITION DES PAGES  */
+
+/* Styles initiaux pour l'entrée */
+.slide-enter {
+    transform: translateX(100%);
+    /* Commence à droite de l'écran */
+    opacity: 0;
+}
+
+/* Styles appliqués pendant que l'élément est en cours d'entrée */
+.slide-enter-active {
+    transform: translateX(0);
+    /* Finis à sa position normale */
+    opacity: 1;
+    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+}
+
+/* Styles initiaux pour la sortie */
+.slide-exit {
+    transform: translateX(0);
+    /* Commence à sa position normale */
+    opacity: 1;
+}
+
+/* Styles appliqués pendant que l'élément est en cours de sortie */
+.slide-exit-active {
+    transform: translateX(-100%);
+    /* Part à gauche de l'écran */
+    opacity: 0;
+    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
 }
