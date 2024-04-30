@@ -6,23 +6,164 @@ body {
     background-color: rgba(255, 255, 255, 0.594);
 }
 
+/* DASHBOARD CSS PAGE  */
+
 .DashH1 {
     font-size: 50px;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-    border: 5px solid rgb(132, 255, 0);
-    background-color: rgb(0, 0, 0);
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #34C759;
+    border: none;
     border-radius: 15px;
-    padding: 10px;
+    padding: 20px 40px;
     display: inline-block;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 20px;
 }
+
 
 .DashAction {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: x-large;
+    text-align: center;
+    color: #34C759;
+    /* Vert moderne pour le texte */
+    font-weight: bold;
+    padding: 20px;
+    background-color: #ECF9EC;
+    /* Arrière-plan vert clair pour un contraste doux */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.DashLinkContainer {
+    margin: 10px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.DashLink {
+    text-decoration: none;
+    color: #34C759;
+    /* Vert moderne pour les liens */
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+}
+
+.DashLink:hover {
+    color: #FFFFFF;
+    background-color: #34C759;
+    border-radius: 8px;
+    transform: translateY(-2px);
+}
+
+.DashLink:focus {
+    outline: none;
+    border-color: #34C759;
+}
+
+.DashLink:active {
+    transform: translateY(1px);
+}
+
+
+
+
+
+
+/* FORMULAIRE CSS  */
+
+
+
+.FormSuperContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.FormTitle {
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #34C759;
+    padding: 15px 30px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.FormContainer {
+    background-color: #ECF9EC;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    margin: 20px 0;
+}
+
+.FormLabel {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2C662D;
+}
+
+.FormInput,
+.FormSelect {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #34C759;
+    box-sizing: border-box;
+}
+
+.FormInput:focus,
+.FormSelect:focus {
+    outline: none;
+    border-color: #1A472A;
+}
+
+
+.FormButton {
+    background-color: #34C759;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: auto;
+    align-self: center;
+    margin-top: 15px;
+}
+
+.FormButton:hover {
+    background-color: #2C662D;
+}
+
+
+
+
+
+
 
 
 .title {
