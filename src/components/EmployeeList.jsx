@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import DataTable from 'react-data-table-component';
+import '../App.css';
 
 function EmployeeList() {
     // Accéder à l'état des employés du store Redux
@@ -20,13 +21,14 @@ function EmployeeList() {
     ];
 
     return (
-        <div className="container">
-            <h1>Current Employees</h1>
+        <div className="TableContainer">
+            
             <DataTable
                 columns={columns}
                 data={employees}
                 defaultSortFieldId={1}
                 pagination
+                className="DataTable"
             />
         </div>
     );

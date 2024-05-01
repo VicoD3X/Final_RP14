@@ -96,10 +96,10 @@ body {
 
 .FormTitle {
     font-size: 40px;
+    padding: 15px 10px;
     font-weight: bold;
     color: #FFFFFF;
     background-color: #34C759;
-    padding: 15px 10px;
     border-radius: 15px;
     display: block;
     width: 100%;
@@ -159,6 +159,88 @@ body {
 .FormButton:hover {
     background-color: #2C662D;
 }
+
+
+
+
+/* LISTE DES EMPLOYEES CSS  */
+.TableSuperContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.TableContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ECF9EC;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin: 20px auto;
+}
+
+.TableTitle {
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #34C759;
+    padding: 15px 10px;
+    border-radius: 15px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Stylisation du DataTable */
+.DataTable {
+    font-family: 'Poppins', sans-serif;
+    /* Assure-toi que cette police est importée dans ton projet */
+    font-size: 16px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.DataTable thead {
+    background-color: #34C759;
+    color: #FFFFFF;
+    font-size: 25px;
+}
+
+.DataTable th,
+.DataTable td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    /* Lignes subtiles entre les rangées */
+}
+
+.DataTable tbody tr:hover {
+    background-color: #f5f5f5;
+    /* Survol avec un léger changement de couleur */
+}
+
+.DataTable-pagination {
+    padding: 10px;
+    background-color: #f9f9f9;
+    /* Fond pour la pagination, ajuste au besoin */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+    /* Espace au-dessus de la pagination */
+}
+
 
 
 

@@ -2,8 +2,13 @@ import EmployeeList from "../components/EmployeeList";
 
 function FormEmployee() {
     return (
-        <EmployeeList/>
+        <>
+            <div className="TableSuperContainer">
+                <h1 className="TableTitle">Liste des employées</h1>
+                <EmployeeList />
+            </div>
+        </>
     );
-  }
-  
-  export default FormEmployee;
+}
+
+export default FormEmployee;
