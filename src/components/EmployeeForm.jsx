@@ -6,7 +6,7 @@ import Popup from '@vicod3x/popup_package';
 
 function EmployeeForm() {
     const dispatch = useDispatch();
-    const [employee, setEmployee] = useState({
+    const initialEmployeeState = {
         firstName: '',
         lastName: '',
         birthDate: '',
@@ -16,7 +16,8 @@ function EmployeeForm() {
         state: '',
         zipCode: '',
         department: ''
-    });
+    };
+    const [employee, setEmployee] = useState(initialEmployeeState);
 
     const [showPopup, setShowPopup] = useState(false);
     const timeoutRef = useRef(null); // useRef pour gérer le timer
@@ -33,8 +34,8 @@ function EmployeeForm() {
         e.preventDefault();
         console.log('Employee saved:', employee);
         dispatch(addEmployee(employee));
+        setEmployee(initialEmployeeState); // Réinitialiser l'état du formulaire
         setShowPopup(true);
-        // Réinitialiser l'état du formulaire ici, si nécessaire
 
         // Gestion du timer pour fermer le popup
         clearTimeout(timeoutRef.current);
@@ -155,7 +156,7 @@ function EmployeeForm() {
                 </div>
                 <div>
                     <label className="FormLabel">Département:</label>
-                    <div class="FormSelectContainer">
+                    <div className="FormSelectContainer">
                         <select
                             name="department"
                             value={employee.department}

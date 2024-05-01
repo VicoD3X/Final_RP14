@@ -1,19 +1,9 @@
 // src/app/store.js
 import { configureStore } from '@reduxjs/toolkit';
-import employeesReducer from '../src/features/employeesSlices';
-import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-
-const persistConfig = {
-  key: 'root',
-  storage,
-  whitelist: ['employees'] // Indique quelle partie du store tu veux persister
-};
-
-const persistedReducer = persistReducer(persistConfig, employeesReducer);
+import employeesReducer from '../src/features/employeesSlices'; // Vérifie que le chemin d'importation est correct
 
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: {
+    employees: employeesReducer // Utilise un objet pour le reducer si tu prévois d'ajouter d'autres reducers à l'avenir
+  },
 });
-
-export const persistor = persistStore(store);

@@ -76,6 +76,33 @@ body {
     transform: translateY(1px);
 }
 
+.navigation-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.link-dashboard,
+.link-employee-list {
+    padding: 12px 24px;
+    background-color: #ECF9EC;
+    color: #34C759;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.link-dashboard:hover,
+.link-employee-list:hover {
+    background-color: #34C759;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
 
 
 
