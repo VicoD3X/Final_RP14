@@ -5,7 +5,7 @@ import '../App.css';
 import Popup from '@vicod3x/popup_package';
 
 function EmployeeForm() {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch(); // Accès à la fonction dispatch pour envoyer des actions Redux.
     const initialEmployeeState = {
         firstName: '',
         lastName: '',
@@ -17,11 +17,14 @@ function EmployeeForm() {
         zipCode: '',
         department: ''
     };
+
+    // État local pour gérer les données du formulaire.
     const [employee, setEmployee] = useState(initialEmployeeState);
 
     const [showPopup, setShowPopup] = useState(false);
-    const timeoutRef = useRef(null); // useRef pour gérer le timer
+    const timeoutRef = useRef(null);  // Référence pour gérer le timer pour fermer automatiquement le popup.
 
+    // Met à jour l'état 'employee' à chaque changement de champ.
     const handleChange = (e) => {
         const { name, value } = e.target;
         setEmployee(prevState => ({
@@ -33,17 +36,18 @@ function EmployeeForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Employee saved:', employee);
-        dispatch(addEmployee(employee));
-        setEmployee(initialEmployeeState); // Réinitialiser l'état du formulaire
+        dispatch(addEmployee(employee)); // Envoie l'employé ajouté au store Redux.
+        setEmployee(initialEmployeeState); // Réinitialise le formulaire après la soumission.
         setShowPopup(true);
 
         // Gestion du timer pour fermer le popup
         clearTimeout(timeoutRef.current);
         timeoutRef.current = setTimeout(() => {
             setShowPopup(false);
-        }, 5000);
+        }, 3000);
     };
 
+    // Fonction pour fermer le popup + clean du timer.
     const closePopup = () => {
         setShowPopup(false);
         clearTimeout(timeoutRef.current);
@@ -62,8 +66,6 @@ function EmployeeForm() {
                         name="firstName"
                         value={employee.firstName}
                         onChange={handleChange}
-                        pattern="[A-Za-zÀ-ÿ -]*"
-                        title="Le prénom ne doit contenir que des lettres, des espaces et des tirets."
                         required
                     />
                 </div>
@@ -75,8 +77,6 @@ function EmployeeForm() {
                         name="lastName"
                         value={employee.lastName}
                         onChange={handleChange}
-                        pattern="[A-Za-zÀ-ÿ -]*"
-                        title="Le nom ne doit contenir que des lettres, des espaces et des tirets."
                         required
                     />
                 </div>
@@ -110,8 +110,6 @@ function EmployeeForm() {
                         name="street"
                         value={employee.street}
                         onChange={handleChange}
-                        pattern="[A-Za-z0-9À-ÿ -]*"
-                        title="La rue ne doit contenir que des lettres, des chiffres, des espaces et des tirets."
                         required
                     />
                 </div>
@@ -123,8 +121,6 @@ function EmployeeForm() {
                         name="city"
                         value={employee.city}
                         onChange={handleChange}
-                        pattern="[A-Za-zÀ-ÿ -]*"
-                        title="La ville ne doit contenir que des lettres, des espaces et des tirets."
                         required
                     />
                 </div>
@@ -136,8 +132,6 @@ function EmployeeForm() {
                         name="state"
                         value={employee.state}
                         onChange={handleChange}
-                        pattern="[A-Za-zÀ-ÿ -]*"
-                        title="L'état ne doit contenir que des lettres, des espaces et des tirets."
                         required
                     />
                 </div>
@@ -149,8 +143,6 @@ function EmployeeForm() {
                         name="zipCode"
                         value={employee.zipCode}
                         onChange={handleChange}
-                        pattern="[0-9]{5}"
-                        title="Le code postal doit contenir exactement 5 chiffres."
                         required
                     />
                 </div>
@@ -177,7 +169,7 @@ function EmployeeForm() {
             <Popup
                 isOpen={showPopup}
                 close={closePopup}
-                content={<p>Nouvelle employée créée !</p>}
+                content={<p>Nouvel employé crée !</p>}
             />
         </>
     );

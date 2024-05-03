@@ -4,7 +4,8 @@ import DataTable from 'react-data-table-component';
 import '../App.css';
 
 function EmployeeList() {
-    // Accéder à l'état des employés du store Redux
+    
+    // Récupère l'état des employés depuis le store
     const employees = useSelector((state) => state.employees.employees);
 
     // Configuration des colonnes pour DataTable
