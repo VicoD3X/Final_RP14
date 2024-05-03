@@ -6,12 +6,12 @@ function FormEmployee() {
     return (
         <>
             <div className="TableSuperContainer">
-                <h1 className="TableTitle">Liste des employées</h1>
+                <h1 className="TableTitle">Liste des employés</h1>
                 <div className="navigation-links">
                     {/* Ajoute le lien vers la page Dashboard à gauche */}
                     <Link to="/dashboard" className="link-dashboard">Dashboard</Link>
                     {/* Ajoute le lien vers la page Liste des employés à droite */}
-                    <Link to="/dashboard/MyEmployee" className="link-employee-list">Liste des employés</Link>
+                    <Link to="/dashboard/FormEmployee" className="link-employee-list">Nouvel employé</Link>
                 </div>
                 <EmployeeList />
             </div>
